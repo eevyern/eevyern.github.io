@@ -223,7 +223,8 @@ function formatMarkingMenuData(data) {
 	// Parse through the records and create individual menu items
 	for (var i = 1; i < numRecords; i++) {
 		var items = records[i].split(',');
-		var id = items[0].trim();
+        var id = items[0].trim();
+        console.log(id);
 		var label = items[2].trim();
 		menuItems[id] = {
 			'name': label,
