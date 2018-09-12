@@ -86,12 +86,14 @@ function nextTrial() {
 	if (currentTrial <= numTrials) {
 
 		var menuType = trialsData[currentTrial]['Menu Type'];
-		var menuDepth = trialsData[currentTrial]['Menu Depth'];
+        var menuDepth = trialsData[currentTrial]['Menu Depth'];
+        var menuBreadth = trialsData[currentTrial]['Menu Breadth'];
 		var targetItem = trialsData[currentTrial]['Target Item'];
 
 		document.getElementById("trialNumber").innerHTML = String(currentTrial) + "/" + String(numTrials);
 		document.getElementById("menuType").innerHTML = menuType;
-		document.getElementById("menuDepth").innerHTML = menuDepth;
+        document.getElementById("menuDepth").innerHTML = menuDepth;
+        document.getElementById("menuBreadth").innerHTML = menuBreadth;
 		document.getElementById("targetItem").innerHTML = targetItem;
 		document.getElementById("selectedItem").innerHTML = "&nbsp;";
 		// Set IV3 state over here
@@ -99,7 +101,8 @@ function nextTrial() {
 		tracker.newTrial();
 		tracker.trial = currentTrial;
 		tracker.menuType = menuType;
-		tracker.menuDepth = menuDepth;
+        tracker.menuDepth = menuDepth;
+        tracker.menuBreadth = menuBreadth;
 		tracker.targetItem = targetItem;
 
 		if (menuType === "Marking") {

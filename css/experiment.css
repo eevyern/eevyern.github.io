@@ -5,7 +5,7 @@ html {
 }
 
 .label {
-  display: block;
+  display: inline-block;
   padding: .2em .2em .2em;
   font-size: 120%;
   line-height: 1;
