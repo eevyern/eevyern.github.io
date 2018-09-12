@@ -113,10 +113,10 @@ function nextTrial() {
 		document.getElementById("trialNumber").innerHTML = String(currentTrial) + "/" + String(numTrials);
 		document.getElementById("menuType").innerHTML = menuType;
         document.getElementById("menuDepth").innerHTML = menuDepth;
-        document.getElementById("menuBreadth").innerHTML = menuBreadth;
 		document.getElementById("targetItem").innerHTML = targetItem;
 		document.getElementById("selectedItem").innerHTML = "&nbsp;";
 		// Set IV3 state over here
+        document.getElementById("menuBreadth").innerHTML = menuBreadth;
 
 		tracker.newTrial();
 		tracker.trial = currentTrial;
