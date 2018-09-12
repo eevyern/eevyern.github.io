@@ -5,9 +5,9 @@ const trialsFile = "./data/experiments.csv"
 const menuL1File = "./data/menu_depth_1.csv"
 const menuL2File = "./data/menu_depth_2.csv"
 const menuL3File = "./data/menu_depth_3.csv"
-const menuL1B8File = "./data/menu2_depth_1.csv"
-const menuL2B8File = "./data/menu2_depth_2.csv"
-const menuL3B8File = "./data/menu2_depth_3.csv"
+const menuB6L1File = "./data/menu2_depth_1.csv"
+const menuB6L2File = "./data/menu2_depth_2.csv"
+const menuB6L3File = "./data/menu2_depth_3.csv"
 
 // Global variables
 var menu;
@@ -17,10 +17,16 @@ var currentTrial = 1;
 var markingMenuL1 = [];
 var markingMenuL2 = [];
 var markingMenuL3 = [];
+var markingMenuB6L1 = [];
+var markingMenuB6L2 = [];
+var markingMenuB6L3 = [];
 var radialMenuTree = null;
 var radialMenuL1 = [];
 var radialMenuL2 = [];
 var radialMenuL3 = [];
+var radialMenuB6L1 = [];
+var radialMenuB6L2 = [];
+var radialMenuB6L3 = [];
 var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
@@ -49,11 +55,13 @@ function initExperiment() {
 	for (var i = 1; i <= numTrials; i++) {
 		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
-		var menuDepth = cells[1].trim();
-		var targetItem = cells[2].trim();
+        var menuDepth = cells[1].trim();
+        var menuBreadth = cells[2].trim();
+		var targetItem = cells[3].trim();
 		trialsData[i] = {
 			'Menu Type': menuType,
-			'Menu Depth': menuDepth,
+            'Menu Depth': menuDepth,
+            'Menu Breadth': menuBreadth,
 			'Target Item': targetItem
 		};
 	}
@@ -61,15 +69,24 @@ function initExperiment() {
 	// Get Menus
 	var menuL1Data = getData(menuL1File);
 	var menuL2Data = getData(menuL2File);
-	var menuL3Data = getData(menuL3File);
+    var menuL3Data = getData(menuL3File);
+    var menuB6L1Data = getData(menuB6L1File);
+    var menuB6L2Data = getData(menuB6L2File);
+    var menuB6L3Data = getData(menuB6L3File);
 	
 	// Format CSV Menu to respective Menu structures
 	markingMenuL1 = formatMarkingMenuData(menuL1Data);
 	markingMenuL2 = formatMarkingMenuData(menuL2Data);
-	markingMenuL3 = formatMarkingMenuData(menuL3Data);
+    markingMenuL3 = formatMarkingMenuData(menuL3Data);
+    markingMenuB6L1 = formatMarkingMenuData(menuB6L1Data);
+    markingMenuB6L2 = formatMarkingMenuData(menuB6L2Data);
+    markingMenuB6L3 = formatMarkingMenuData(menuB6L3Data);
 	radialMenuL1 = formatRadialMenuData(menuL1Data);
 	radialMenuL2 = formatRadialMenuData(menuL2Data);
-	radialMenuL3 = formatRadialMenuData(menuL3Data);
+    radialMenuL3 = formatRadialMenuData(menuL3Data);
+    radialMenuB6L1 = formatRadialMenuData(menuB6L1Data);
+    radialMenuB6L2 = formatRadialMenuData(menuB6L2Data);
+    radialMenuB6L3 = formatRadialMenuData(menuB6L3Data);
 	
 	//Start the first trial
 	nextTrial();
@@ -111,29 +128,52 @@ function nextTrial() {
 		if (menuType === "Marking") {
 				
 			initializeMarkingMenu();
-			
-			if(menuDepth == 1){
-				menu = MarkingMenu(markingMenuL1, document.getElementById('marking-menu-container'));
-			}
-			else if(menuDepth == 2){
-				menu = MarkingMenu(markingMenuL2, document.getElementById('marking-menu-container'));
-			}else if(menuDepth == 3){
-				menu = MarkingMenu(markingMenuL3, document.getElementById('marking-menu-container'));
-			}
+
+            if (menuBreadth == 4) {
+                if (menuDepth == 1) {
+                    menu = MarkingMenu(markingMenuL1, document.getElementById('marking-menu-container'));
+                }
+                else if (menuDepth == 2) {
+                    menu = MarkingMenu(markingMenuL2, document.getElementById('marking-menu-container'));
+                } else if (menuDepth == 3) {
+                    menu = MarkingMenu(markingMenuL3, document.getElementById('marking-menu-container'));
+                }
+            } else {
+                if (menuDepth == 1) {
+                    menu = MarkingMenu(markingMenuB6L1, document.getElementById('marking-menu-container'));
+                }
+                else if (menuDepth == 2) {
+                    menu = MarkingMenu(markingMenuB6L2, document.getElementById('marking-menu-container'));
+                } else if (menuDepth == 3) {
+                    menu = MarkingMenu(markingMenuB6L3, document.getElementById('marking-menu-container'));
+                }
+            }
 
 			markingMenuSubscription = menu.subscribe((selection) => markingMenuOnSelect(selection));
 
 		} else if (menuType === "Radial") {
 
-			initializeRadialMenu();			
-			if (menuDepth == 1){
-				menu = createRadialMenu(radialMenuL1);
-			}
-			else if(menuDepth == 2){
-				menu = createRadialMenu(radialMenuL2);
-			}else if(menuDepth == 3){
-				menu = createRadialMenu(radialMenuL3);
-			}
+            initializeRadialMenu();	
+
+            if (menuBreadth == 4) {
+                if (menuDepth == 1) {
+                    menu = createRadialMenu(radialMenuL1);
+                }
+                else if (menuDepth == 2) {
+                    menu = createRadialMenu(radialMenuL2);
+                } else if (menuDepth == 3) {
+                    menu = createRadialMenu(radialMenuL3);
+                }
+            } else {
+                if (menuDepth == 1) {
+                    menu = createRadialMenu(radialMenuB6L1);
+                }
+                else if (menuDepth == 2) {
+                    menu = createRadialMenu(radialMenuB6L2);
+                } else if (menuDepth == 3) {
+                    menu = createRadialMenu(radialMenuB6L3);
+                }
+            }
 
 
 		}
