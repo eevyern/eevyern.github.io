@@ -5,6 +5,9 @@ const trialsFile = "./data/experiments.csv"
 const menuL1File = "./data/menu_depth_1.csv"
 const menuL2File = "./data/menu_depth_2.csv"
 const menuL3File = "./data/menu_depth_3.csv"
+const menuL1B8File = "./data/menu2_depth_1.csv"
+const menuL2B8File = "./data/menu2_depth_2.csv"
+const menuL3B8File = "./data/menu2_depth_3.csv"
 
 // Global variables
 var menu;
