@@ -27,7 +27,7 @@ class ExperimentTracker {
 
 	recordSelectedItem(selectedItem) {
 		this.selectedItem = selectedItem;
-		this.stopTimer();
+        this.stopTimer();
 	}
 
 	stopTimer() {
@@ -44,7 +44,7 @@ class ExperimentTracker {
 	}
 
 	toCsv() {
-		var csvFile = "Trial,Attempt,Menu Type,Menu Depth,Menu Breadth,Target Item,Selected Item,Start Time, End Time\n";
+		var csvFile = "Attempt,Menu Type,Menu Depth,Menu Breadth,Target Item,Selected Item,Start Time, End Time\n";
 		for (var i = 0; i < this.trials.length; i++) {
 			csvFile += this.trials[i].join(',');
 			csvFile += "\n";
