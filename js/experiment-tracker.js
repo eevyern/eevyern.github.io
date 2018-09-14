@@ -13,8 +13,8 @@ class ExperimentTracker {
 		this.targetItem = null;
 		this.selectedItem = null;
 		this.startTime = null;
-		this.endTime = null;
-	}
+        this.endTime = null;
+    }
 	
 	resetTimers(){
 		this.startTime = null;
