@@ -53,9 +53,10 @@ class ExperimentTracker {
 		var hiddenLink = document.createElement('a');
 		hiddenLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvFile);
 		hiddenLink.target = '_blank';
-		hiddenLink.download = 'experiment.csv';
+		hiddenLink.download = 'experiment' + pid + '.csv';
 		document.body.appendChild(hiddenLink);
-		hiddenLink.click();
+        hiddenLink.click();
+        window.location = 'post-questionnaire.html';
 	}
 
 
