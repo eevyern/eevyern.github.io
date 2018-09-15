@@ -30,9 +30,7 @@ var radialMenuB6L3 = [];
 var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
-
-
-
+var pid;
 
 
 // Load CSV files from data and return text
@@ -48,6 +46,10 @@ function getData(relativePath) {
 function initExperiment() {
 
 	// Get Trails
+    pid = Helper.getCurrentParticipantId();
+    // Different participant has different experiment files.
+
+    trialsFile = "data/experiments_" + pid + ".csv";
 	var data = getData(trialsFile);
 
 	var records = data.split("\n");
