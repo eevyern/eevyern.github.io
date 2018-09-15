@@ -25,18 +25,18 @@ var Helper = (function () {
     module.downloadFormData = function (formResponses, type) {
         var headers = [];
         var data = [];
-        var pid = ACPToolKit.getCurrentParticipantId();
+        var pid = Helper.getCurrentParticipantId();
         formResponses.unshift({ name: 'pid', value: pid });
         formResponses.forEach(function (item) {
             headers.push(item.name);
             data.push(item.value);
         });
-        arrayToCSV([headers, data], 'acp-' + pid + '-' + type);
+        arrayToCSV([headers, data], 'asgnmt1-' + pid + '-' + type);
     }
 
     module.downloadTrialResults = function (data) {
-        var pid = ACPToolKit.getCurrentParticipantId();
-        arrayToCSV(data, 'acp-' + pid + '-trials');
+        var pid = Helper.getCurrentParticipantId();
+        arrayToCSV(data, 'asgnmt1-' + pid + '-trials');
     }
 
     function arrayToCSV(twoDiArray, fileName) {
@@ -70,8 +70,8 @@ var Helper = (function () {
         }
     });
 
+    /*
     if (window.location.pathname.indexOf('experiment') > -1) {
-        var wm = new WindowManager('autocompaste-display');
         var currentTrialOptions = null;
         var startTime = null;
 
@@ -150,6 +150,7 @@ var Helper = (function () {
             return currentTrialOptions;
         }
     }
+    */
 
     return module;
 })();
