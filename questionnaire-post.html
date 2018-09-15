@@ -1,0 +1,394 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>CS4249 Assignment 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Welcome</a></li>
+                        <li><a href="questionnaire-pre.html">Pre Questionnaire</a></li>
+                        <li><a href="instructions.html">Instructions</a></li>
+                        <li><a href="experiment.html">Experiment</a></li>
+                        <li class="active"><a href="questionnaire-post.html">Post Questionnaire</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Post-Experiment Questionnaire</h1>
+                    <hr>
+                    <!--<p>This part of the interface collects whatever post-experiment information. After the experiment, you want to collect more qualitative and quantitative feedback about the tested techniques. Some of the typical questions include, personal preferences, any difficulties participants experienced in the experiment, and areas of improvement. Please design a basic post-experimental questionnaire (no more than 10 questions).</p>-->
+					<p>Almost done! Before we end off for today, please help fill up this short post-experiment questionnaire to give us a better understanding of your experience with the Marking and Radial Menus.</p>
+                    <p>Current participant: <span class="js-pid pid"></span></p>
+
+                    <form id="post-expt-form">
+                        <div class="form-group">
+                            <label for="post-pid">Participant ID</label>
+                            <input type="text" class="form-control" id="post-pid" name="post-pid" placeholder="Enter pid here">
+                        </div>
+                        <div class="form-group">
+                            <label for="post-markease">On a scale of 1 to 5, how easy was it using the Marking Menu to find the required item? <br>(1 being “Very difficult” to 5 being “Very easy”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markease" id="markease1" value="1">
+                                    1 - Very difficult
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markease" id="markease2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markease" id="markease3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markease" id="markease4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markease" id="markease5" value="5">
+                                    5 - Very easy
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-radease">On a scale of 1 to 5, how easy was it using the Radial Menu to find the required item? <br>(1 being “Very difficult” to 5 being “Very easy”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radease" id="radease1" value="1">
+                                    1 - Very difficult
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radease" id="radease2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radease" id="radease3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radease" id="radease4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radease" id="radease5" value="5">
+                                    5 - Very easy
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-markacc">On a scale of 1 to 5, how accurate was it using the Marking Menu to find the required item? <br> (1 being “Very inaccurate” to 5 being “Very accurate”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markacc" id="markacc1" value="1">
+                                    1 - Very inaccurate
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markacc" id="markacc2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markacc" id="markacc3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markacc" id="markacc4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markacc" id="markacc5" value="5">
+                                    5 - Very accurate
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-radacc">On a scale of 1 to 5, how accurate was it using the Radial Menu to find the required item? <br>(1 being “Very inaccurate” to 5 being “Very accurate”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radacc" id="radacc1" value="1">
+                                    1 - Very inaccurate
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radacc" id="radacc2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radacc" id="radacc3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radacc" id="radacc4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radacc" id="radacc5" value="5">
+                                    5 - Very accurate
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-markprof">On a scale of 1 to 5, how long did you take before you felt like your proficiency at using the Marking Menu improved? <br>(1 being “Very slow” to 5 being “Very fast”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markprof" id="markprof1" value="1">
+                                    1 - Very slow
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markprof" id="markprof2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markprof" id="markprof3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markprof" id="markprof4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markprof" id="markprof5" value="5">
+                                    5 - Very fast
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-radprof">On a scale of 1 to 5, how long did you take before you felt like your proficiency at using the Radial Menu improved? <br>(1 being “Very slow” to 5 being “Very fast”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radprof" id="radprof1" value="1">
+                                    1 - Very slow
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radprof" id="radprof2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radprof" id="radprof3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radprof" id="radprof4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radprof" id="radprof5" value="5">
+                                    5 - Very fast
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-markusage">On a scale of 1 to 5, how likely are you to use the Marking Menu over the traditional menus if it were built into your programs? <br> (1 being “Very unlikely” to 5 being “Very likely”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markusage" id="markusage1" value="1">
+                                    1 - Very unlikely
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markusage" id="markusage2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markusage" id="markusage3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markusage" id="markusage4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-markusage" id="markusage5" value="5">
+                                    5 - Very likely
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-radusage">On a scale of 1 to 5, how likely are you to use the Radial Menu over the traditional menus if it were built into your programs? <br> (1 being “Very unlikely” to 5 being “Very likely”)</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radusage" id="radusage1" value="1">
+                                    1 - Very unlikely
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radusage" id="radusage2" value="2">
+                                    2
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radusage" id="radusage3" value="3">
+                                    3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radusage" id="radusage4" value="4">
+                                    4
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-radusage" id="radusage5" value="5">
+                                    5 - Very likely
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-techniq">Which copy-pasting technique do you prefer at the end?</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-techniq" id="trad" value="trad">
+                                    Traditional
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-techniq" id="mark" value="mark">
+                                    Marking Menu
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-techniq" id="rad" value="rad">
+                                    Radial Menu
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post-techniq" id="none" value="none">
+                                    I have no preference
+                                </label>
+                            </div>
+                        </div>
+                        <!--
+    <div class="form-group">
+        <label for="q3">Question 3 - Checkbox</label>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="q3" value="checkbox1">
+            Checkbox response 1
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="q3" value="checkbox2">
+            Checkbox response 2
+          </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="q4">Question 4 - Select Options</label>
+        <select class="form-control" name="q4">
+            <option value="option1">Option response 1</option>
+            <option value="option2">Option response 2</option>
+            <option value="option3">Option response 3</option>
+            <option value="option4">Option response 4</option>
+            <option value="option1">Option response 5</option>
+        </select>
+    </div>
+    -->
+                        <div class="form-group">
+                            <label for="post-feedback">Any improvements to the technique or the experiment that you would like to provide? You may provide any other forms of feedback here as well. (Optional)</label>
+                            <textarea class="form-control" id="post-feedback" name="post-feedback" placeholder="Enter response"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/DataStorage.js"></script>
+        <script src="js/ACPToolKit.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            $(function () {
+                $('#post-expt-form').submit(function (event) {
+                    event.preventDefault();
+                    var formResponses = $(this).serializeArray();
+                    // Do your own form validation here.
+                    ACPToolKit.downloadFormData(formResponses, 'post');
+                    ACPToolKit.clearAllData();
+                    alert('Thank you for your participation!');
+                });
+            });
+        </script>
+    </body>
+</html>

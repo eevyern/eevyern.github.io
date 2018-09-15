@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>CS4249 Assignment 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Welcome</a></li>
+                        <li><a href="questionnaire-pre.html">Pre Questionnaire</a></li>
+                        <li class="active"><a href="instructions.html">Instructions</a></li>
+                        <li><a href="experiment.html">Experiment</a></li>
+                        <li><a href="questionnaire-post.html">Post Questionnaire</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Instructions</h1>
+                    <hr>
+                    <p>Dear participant <span class="js-pid pid"></span>, please read the instructions below carefully before pressing <strong>Next</strong>.</p>
+
+                    <!--<p>There should always be an instruction before doing the actual evaluation of the interface.<p>
+    <p>Enter your instructions to your participant here. Diagrams and screenshots will be very helpful!</p>
+    -->
+                    <p><h2>Introduction</h2></p>
+                    <p>This entire experiment aims to compare two different methods of menu navigation: a <strong>Marking Menu</strong> and a <strong>Radial Menu</strong>. We hope to investigate the differences in the effectiveness and usefulness between these two methods. More details on both these menus will be explained below.</p>
+                    <br>
+                    <p>The <strong>top of the experiment page</strong> will display various key details throughout the experiment.</p>
+                    <img src="img/Instructions1.png">
+                    <br>
+                    <br>
+                    <p>The <strong>bottom of the page</strong> will be where the main experiment takes place (within the orange box).</p>
+                    <img src="img/Instructions2.png">
+                    <br>
+                    <br>
+                    <p><h2>A) Marking Menu</h2></p>
+                    <br>
+                    <img src="img/Marking.png">
+                    <p>
+                        <li>1.	The marking menu can be activated by holding the <strong>Left Mouse Button.</strong></li>
+                        <li>2.	Mouse over your desired item, and <strong>release</strong> to select.</li>
+                        <li>3.	In trials with a Menu Depth of more than 1, selecting a menu for about 1 second will show a new menu with the items contained in that menu (eg. Food --> Meat, Vegetables...)</li>
+                        <li>4.	Click <strong>Next</strong> when you are done.</li>
+                    </p>
+                    <p><strong>Note:</strong> You can also draw the relevant strokes quickly to select a specific item without waiting for the entire menu to show (eg. drawing a straight line down will select ‘Food’ without having to open the full menu).</p>
+                    <br>
+                    <br>
+                    <p><h2>B) Radial Menu</h2></p>
+                    <br>
+                    <img src="img/Radial.png">
+                    <p>
+                        <li>1.	The radial menu can be activated by clicking the <strong>Right Mouse Button.</strong></li>
+                        <li>2.	Mouse over your desired item, and click the <strong>Left Mouse Button</strong> to select.</li>
+                        <li>3.	In trials with a Menu Depth of more than 1, selecting a menu for about 1 second will show a new menu with the items contained in that menu (eg. Food --> Meat, Vegetables...)</li>
+                        <li>4.	Click <strong>Next</strong> when you are done.</li>
+                    </p>
+                    <br>
+                    <br>
+                    <p><h2>C) Miscellaneous</h2></p>
+                    <p>You will be asked to complete a post-experiment questionnaire after the experiment is complete.</p>
+                    <br>
+                    <p>Please remember to keep the .csv files that are being downloaded by the browser!</p>
+                    <br>
+                    <br>
+                    <form class="form-inline">
+                        <button type="submit" class="btn btn-primary btn-lg">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/DataStorage.js"></script>
+        <script src="js/ACPToolKit.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            $(function () {
+                $('form').submit(function (event) {
+                    event.preventDefault();
+                    window.location = 'experiment.html';
+                });
+            });
+        </script>
+    </body>
+</html>
