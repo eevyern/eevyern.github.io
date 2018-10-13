@@ -380,8 +380,8 @@
                     event.preventDefault();
                     var formResponses = $(this).serializeArray();
                     // Do your own form validation here.
-                    ACPToolKit.downloadFormData(formResponses, 'post');
-                    ACPToolKit.clearAllData();
+                    Helper.downloadFormData(formResponses, 'post');
+                    Helper.clearAllData();
                     alert('Thank you for your participation!');
                 });
             });

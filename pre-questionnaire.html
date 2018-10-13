@@ -303,7 +303,7 @@
                     event.preventDefault();
                     var formResponses = $(this).serializeArray();
                     // Do your own form validation here.
-                    ACPToolKit.downloadFormData(formResponses, 'pre');
+                    Helper.downloadFormData(formResponses, 'pre');
                     window.location = 'instructions.html';
                 });
             });
